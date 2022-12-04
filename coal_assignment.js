@@ -2490,13 +2490,13 @@ function myFunction() {//FUNCTION TO LINK TEXT BOX OF ASSEMBLY LANGUAGE YO INSTR
          console.log(Registers[k]);
          let a=k.toString()
          console.log(a);
-    document.getElementById(a).innerHTML=Registers[k];
+    document.getElementById(a).innerHTML=Registers[k]+h;
          }
      }
     
     var x=document.getElementById("id1").value;
     instruction(x);
-    document.getElementById("machine_code").innerHTML=machinecode+"h";
+    document.getElementById("machine_code").innerHTML=machinecode;
 machinecode=" ";
 
 
