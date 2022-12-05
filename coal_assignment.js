@@ -403,7 +403,7 @@ else if(op_split[1]== "AL" || op_split[1]== "BL" ||op_split[1]== "CL" || op_spli
 switch(Inst_op_split[0]){
 
 
-    case "MOV":
+    case "MOV": //move instruction
         machinecode=machinecode.concat(Opcodes_Instructions.MOV);
         
             if(is_Register(op_split[0])){//if register is destination
@@ -593,7 +593,7 @@ switch(Inst_op_split[0]){
             
             }
            
-     case "ADD":
+     case "ADD": //addition subtraction
                 machinecode=machinecode.concat(Opcodes_Instructions.ADD);
             if(is_Register(op_split[0])){//if register is destination
                 console.log("BEFORE VALUE OF REG:",Registers[op_split[0]]);
@@ -796,7 +796,7 @@ switch(Inst_op_split[0]){
             
             }
 
-    case "SUB":
+    case "SUB": //subtraction instruction
             machinecode=machinecode.concat(Opcodes_Instructions.SUB);
             if(is_Register(op_split[0])){//if register is destination
                 console.log("BEFORE VALUE OF REG:",Registers[op_split[0]]);
@@ -998,7 +998,7 @@ switch(Inst_op_split[0]){
                 }
             
             }
-    case "INC":
+    case "INC": // increment instruction
             machinecode=machinecode.concat(Opcodes_Instructions.INC);
             
             
@@ -1006,7 +1006,7 @@ switch(Inst_op_split[0]){
                 machinecode=machinecode.concat(word);//word bit
                 console.log("BEFORE VALUE OF MEMORY:",Registers[op_split[0]]);
     
-            machinecode=machinecode.concat(" 00 ");
+            machinecode=machinecode.concat(" 11 ");
             machinecode=machinecode.concat(" ");
             machinecode=machinecode.concat("000");
             machinecode=machinecode.concat(" ");
@@ -1116,7 +1116,7 @@ switch(Inst_op_split[0]){
 
                 }
 
-    case "DEC":
+    case "DEC": // decrement instruction
         machinecode=machinecode.concat(Opcodes_Instructions.INC);
         
             
@@ -1124,7 +1124,7 @@ switch(Inst_op_split[0]){
             machinecode=machinecode.concat(word);//word bit
             console.log("BEFORE VALUE OF MEMORY:",Registers[op_split[0]]);
            
-        machinecode=machinecode.concat(" 00 ");
+        machinecode=machinecode.concat(" 11 ");
         machinecode=machinecode.concat(" ");
         machinecode=machinecode.concat("000");
         machinecode=machinecode.concat(" ");
@@ -1436,7 +1436,7 @@ switch(Inst_op_split[0]){
                 }
                 
 
-                case "OR":
+                case "OR": //OR instruction
                     machinecode=machinecode.concat(Opcodes_Instructions.OR);
                 if(is_Register(op_split[0])){//if register is destination
                     console.log("BEFORE VALUE OF REG:",Registers[op_split[0]]);
@@ -1642,7 +1642,7 @@ switch(Inst_op_split[0]){
                 
                 }
     
-                case "XOR":
+                case "XOR": // xor instruction
                 machinecode=machinecode.concat(Opcodes_Instructions.XOR);
                 if(is_Register(op_split[0])){//if register is destination
                     console.log("BEFORE VALUE OF REG:",Registers[op_split[0]]);
@@ -1963,7 +1963,7 @@ switch(Inst_op_split[0]){
             
                         }
 
-            case "NEG":
+            case "NEG": //negation instruction
                 machinecode=machinecode.concat(Opcodes_Instructions.NEG);
                     
                         
@@ -1971,7 +1971,7 @@ switch(Inst_op_split[0]){
                         machinecode=machinecode.concat(word);//word bit
                         console.log("BEFORE VALUE OF MEMORY:",Registers[op_split[0]]);
                        
-                    machinecode=machinecode.concat(" 00 ");
+                    machinecode=machinecode.concat(" 11 ");
                     machinecode=machinecode.concat(" ");
                     machinecode=machinecode.concat("011");
                     machinecode=machinecode.concat(" ");
@@ -2077,7 +2077,7 @@ switch(Inst_op_split[0]){
                             break;
             
                         }
-            case "CMP":
+            case "CMP": // compare instruction
                 machinecode=machinecode.concat(Opcodes_Instructions.CMP);
                 if(is_Register(op_split[0])){//if register is destination
                     console.log("BEFORE VALUE OF REG:",Registers[op_split[0]]);
